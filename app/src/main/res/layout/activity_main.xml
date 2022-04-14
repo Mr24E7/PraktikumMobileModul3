@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/icon_dollar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/dollar" />
+
+    <TextView
+        android:id="@+id/mata_uang"
+        style="@style/Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pilih_mata_uang"
+        app:layout_constraintStart_toEndOf="@id/icon_dollar"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="10dp" />
+
+    <RadioGroup
+        android:id="@+id/pilihan_uang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/euro"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@id/icon_dollar"
+        app:layout_constraintTop_toBottomOf="@id/mata_uang"
+        android:layout_marginVertical="5dp"
+        android:layout_marginHorizontal="10dp" >
+
+        <RadioButton
+            android:id="@+id/euro"
+            style="@style/Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/euro" />
+
+        <RadioButton
+            android:id="@+id/dollar"
+            style="@style/Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dollar" />
+
+        <RadioButton
+            android:id="@+id/yen"
+            style="@style/Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yen" />
+
+        <RadioButton
+            android:id="@+id/riyal"
+            style="@style/Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/riyal" />
+
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/icon_konversi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/jumlah_uang"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pilihan_uang"
+        app:srcCompat="@drawable/cv" />
+
+    <EditText
+        android:id="@+id/jumlah_uang"
+        style="@style/Text"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/nilai_mata_uang"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toEndOf="@id/icon_konversi"
+        app:layout_constraintTop_toBottomOf="@id/pilihan_uang"
+        android:autofillHints="@string/nilai_mata_uang"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="10dp" />
+
+    <Button
+        android:id="@+id/tombol"
+        android:layout_width="0dp"
+        style="@style/Text"
+        android:layout_height="wrap_content"
+        android:text="@string/konversi"
+        app:layout_constraintEnd_toEndOf="@id/jumlah_uang"
+        app:layout_constraintStart_toEndOf="@id/icon_konversi"
+        app:layout_constraintTop_toBottomOf="@id/jumlah_uang"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="10dp" />
+
+    <TextView
+        android:id="@+id/hasil"
+        style="@style/Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text=""
+        app:layout_constraintEnd_toEndOf="@id/tombol"
+        app:layout_constraintTop_toBottomOf="@id/tombol"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="10dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
